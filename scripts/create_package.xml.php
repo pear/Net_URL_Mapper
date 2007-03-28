@@ -8,7 +8,8 @@ array(
     'baseinstalldir' => 'Net/URL',
     'packagedirectory' => dirname(__FILE__).'/..',
     'filelistgenerator' => 'file',
-    'ignore' => array('.svn/', 'scripts/', '*.plex'),
+    'include' => array('*.php'),
+    'ignore' => array('scripts/', '*.plex'),
     'dir_roles' => array('tests' => 'test'),
     ));
 
@@ -24,7 +25,7 @@ and as such, this package can be compared to what they call a router. Still, Net
 does not perform the dispatching like these frameworks and therefore can be used with your 
 own router.');
 
-$packagexml->setUri('http://src.mamasam.com/packages/Net_URL_Mapper-'.$version);
+$packagexml->setChannel('pear.php.net');
 $packagexml->setAPIVersion('1.0.0');
 $packagexml->setReleaseVersion($version);
 $packagexml->setReleaseStability('beta');
