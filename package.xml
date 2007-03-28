@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.5.0RC1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Net_URL_Mapper</name>
+ <uri>http://src.mamasam.com/packages/Net_URL_Mapper-0.9.0</uri>
+ <summary>Provides a simple and flexible way to build nice URLs for web applications.</summary>
+ <description>Net_URL_Mapper provides a simple and flexible way to build nice URLs for your web applications.
+
+The URL syntax is similar to what can be found in Ruby on Rails or Python Routes module 
+and as such, this package can be compared to what they call a router. Still, Net_URL_Mapper 
+does not perform the dispatching like these frameworks and therefore can be used with your 
+own router.</description>
+ <lead>
+  <name>Bertrand Mansion</name>
+  <user>mansion</user>
+  <email>golgote@mamasam.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2007-03-28</date>
+ <time>12:03:35</time>
+ <version>
+  <release>0.9.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>Initial release</notes>
+ <contents>
+  <dir baseinstalldir="Net/URL" name="/">
+   <file baseinstalldir="Net/URL" md5sum="6f016e5aef5671db7427cd1b3a66b918" name="Mapper/Exception.php" role="php" />
+   <file baseinstalldir="Net/URL" md5sum="7fcddadbe18d70d3bb02831fc392519c" name="Mapper/Part.php" role="php" />
+   <file baseinstalldir="Net/URL" md5sum="01cb49e408297584b1de0527508a9876" name="Mapper/Path.php" role="php" />
+   <file baseinstalldir="Net/URL" md5sum="df8698627ff0bfed9334ecbb1c7e193b" name="Mapper/Part/Dynamic.php" role="php" />
+   <file baseinstalldir="Net/URL" md5sum="8e13885e3c94fa6cd8150ca63d408c48" name="Mapper/Part/Fixed.php" role="php" />
+   <file baseinstalldir="Net/URL" md5sum="f69b240e164e177ea06d131a8ea3e3d0" name="Mapper/Part/Wildcard.php" role="php" />
+   <file baseinstalldir="Net/URL" md5sum="b686b305f4a61e093e1eaf0406efe2dc" name="tests/ExceptionTest.php" role="test" />
+   <file baseinstalldir="Net/URL" md5sum="daa13beca7468724af74213995e3b510" name="tests/GenerationTest.php" role="test" />
+   <file baseinstalldir="Net/URL" md5sum="e428e645977314d8098ac7a11e50044b" name="tests/RecognitionTest.php" role="test" />
+   <file baseinstalldir="Net/URL" md5sum="90fcbc7cc47d26494603d93f328cce3c" name="Mapper.php" role="php" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.3</min>
+   </pearinstaller>
+   <package>
+    <name>Net_URL</name>
+    <channel>pear.php.net</channel>
+    <min>1.0.14</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.9.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>stable</api>
+   </stability>
+   <date>2007-03-28</date>
+   <license uri="http://opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>Initial release</notes>
+  </release>
+ </changelog>
+</package>
