@@ -84,6 +84,22 @@ class Net_URL_Mapper_Path
         $this->getRequired();
     }
 
+    /**
+    * Called when the object is serialized
+    * Make sure we do not store too much info when the object is serialized
+    * and call the regular expressions generator functions so that they will
+    * not need to be generated again on wakeup.
+    *
+    * @return   array   Name of properties to store when serialized
+    */
+    public function __sleep()
+    {
+        $this->getFormat();
+        $this->getRule();
+        return array('alias', 'path', 'defaults', 'rule', 'format',
+            'parts', 'minKeys', 'maxKeys', 'fixed', 'required');
+    }
+
     public function getPath()
     {
         return $this->path;
