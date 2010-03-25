@@ -49,12 +49,12 @@ require_once 'Net/URL/Mapper.php';
 /**
  * PHPUnit Test Case
  */
-require_once 'PHPUnit/Extensions/ExceptionTestCase.php';
+require_once 'PHPUnit/Framework.php';
 
 /**
  * URL recognition tests for Net_URL_Mapper class
  */
-class ExceptionTest extends PHPUnit_Extensions_ExceptionTestCase
+class ExceptionTest extends PHPUnit_Framework_TestCase
 {
     public function setup()
     {
