@@ -5,8 +5,8 @@
  * PHP version 5
  *
  * LICENSE:
- * 
- * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com> 
+ *
+ * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -16,9 +16,9 @@
  *    * Redistributions of source code must retain the above copyright
  *      notice, this list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright
- *      notice, this list of conditions and the following disclaimer in the 
+ *      notice, this list of conditions and the following disclaimer in the
  *      documentation and/or other materials provided with the distribution.
- *    * The names of the authors may not be used to endorse or promote products 
+ *    * The names of the authors may not be used to endorse or promote products
  *      derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
@@ -47,14 +47,14 @@
 require_once 'Net/URL/Mapper.php';
 
 /**
- * PHPUnit2 Test Case
+ * PHPUnit Test Case
  */
-require_once 'PHPUnit2/Extensions/ExceptionTestCase.php';
+require_once 'PHPUnit/Extensions/ExceptionTestCase.php';
 
 /**
  * URL recognition tests for Net_URL_Mapper class
  */
-class ExceptionTest extends PHPUnit2_Extensions_ExceptionTestCase
+class ExceptionTest extends PHPUnit_Extensions_ExceptionTestCase
 {
     public function setup()
     {
@@ -75,7 +75,7 @@ class ExceptionTest extends PHPUnit2_Extensions_ExceptionTestCase
         $m->reset();
         $m->connect(':name/hi', array('controller'=>'content'), array('name'=>'index'));
         $v = $m->match('/dude/hi');
-    }   
+    }
 
     public function testDynamicWithRegexpCondition1()
     {

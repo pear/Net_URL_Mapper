@@ -5,8 +5,8 @@
  * PHP version 5
  *
  * LICENSE:
- * 
- * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com> 
+ *
+ * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -16,9 +16,9 @@
  *    * Redistributions of source code must retain the above copyright
  *      notice, this list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright
- *      notice, this list of conditions and the following disclaimer in the 
+ *      notice, this list of conditions and the following disclaimer in the
  *      documentation and/or other materials provided with the distribution.
- *    * The names of the authors may not be used to endorse or promote products 
+ *    * The names of the authors may not be used to endorse or promote products
  *      derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
@@ -47,15 +47,15 @@
 require_once 'Net/URL/Mapper.php';
 
 /**
- * PHPUnit2 Test Case
+ * PHPUnit Test Case
  */
-require_once 'PHPUnit2/Framework/TestCase.php';
+require_once 'PHPUnit/Framework/TestCase.php';
 
 
 /**
  * URL generation tests for Net_URL_Mapper class
  */
-class GenerationTest extends PHPUnit2_Framework_TestCase
+class GenerationTest extends PHPUnit_Framework_TestCase
 {
     public function testAllStaticNoReqs()
     {
@@ -108,7 +108,7 @@ class GenerationTest extends PHPUnit2_Framework_TestCase
         $this->assertEquals('/article', $m->generate(array('page'=>null)));
         $this->assertEquals('/article', $m->generate(array('page'=>false)));
         $this->assertEquals('/article/0', $m->generate(array('page'=>0)));
-        
+
         $this->assertEquals('/view/sumatra', $m->generate(array('home'=>'sumatra')));
         $this->assertEquals('/view/austere/chicago', $m->generate(array('area'=>'chicago')));
 
@@ -140,7 +140,7 @@ class GenerationTest extends PHPUnit2_Framework_TestCase
         $this->assertEquals('/article', $m->generate(array('page'=>null)));
         $this->assertEquals('/article', $m->generate(array('page'=>false)));
         $this->assertEquals('/article/0', $m->generate(array('page'=>0)));
-        
+
         $this->assertEquals('/view/sumatra', $m->generate(array('home'=>'sumatra')));
         $this->assertEquals('/view/austere/chicago', $m->generate(array('area'=>'chicago')));
 
@@ -279,7 +279,7 @@ class GenerationTest extends PHPUnit2_Framework_TestCase
         $this->assertEquals('/articles/category/bingo', $m->generate(array('controller'=>'articles', 'action'=>'category', 'id' => 'bingo')));
         $this->assertEquals('/xml/index/feed.xml', $m->generate(array('controller'=>'xml', 'action'=>'index')));
         $this->assertEquals('/xml/articlerss/feed.xml', $m->generate(array('controller'=>'xml', 'action'=>'articlerss')));
-        
+
         $this->assertEquals(false, $m->generate(array('controller'=>'admin/comments', 'id'=>2)));
         $this->assertEquals(false, $m->generate(array('controller'=>'articles', 'action'=>'find_by_date', 'year'=>2004)));
 
@@ -293,7 +293,7 @@ class GenerationTest extends PHPUnit2_Framework_TestCase
         $this->assertEquals('/test', $m->generate(array('controller'=>'post', 'action'=>'show')));
         $this->assertEquals('/test', $m->generate(array('controller'=>'post', 'action'=>'show', 'year'=>null)));
         $this->assertEquals('/test/2004', $m->generate(array('controller'=>'post', 'action'=>'show', 'year'=>2004)));
-        $this->assertEquals(false, $m->generate(array('controller'=>'post', 'action'=>'show', 'year'=>'abcd')));   
+        $this->assertEquals(false, $m->generate(array('controller'=>'post', 'action'=>'show', 'year'=>'abcd')));
     }
 
     public function testQstring()
@@ -346,11 +346,11 @@ class GenerationTest extends PHPUnit2_Framework_TestCase
         $en = Net_URL_Mapper::getInstance('en');
         $en->setPrefix('/en');
         $en->connect('pictures/by_category/:id', array('controller'=>'pictures', 'action'=>'by_category'));
-        
+
         $fr = Net_URL_Mapper::getInstance('fr');
         $fr->setPrefix('/fr');
         $fr->connect('photos/par_categorie/:id', array('controller'=>'pictures', 'action'=>'by_category'));
-        
+
         $this->assertEquals('/en/pictures/by_category/bingo', $en->generate(array('controller'=>'pictures', 'action'=>'by_category', 'id' => 'bingo')));
         $this->assertEquals('/fr/photos/par_categorie/bingo', $fr->generate(array('controller'=>'pictures', 'action'=>'by_category', 'id' => 'bingo')));
     }
@@ -371,7 +371,7 @@ class GenerationTest extends PHPUnit2_Framework_TestCase
                 'handle'=>'mansion',
                 'section'=>'#password')));
 
-        $this->assertEquals('/account/edit/mansion#default', 
+        $this->assertEquals('/account/edit/mansion#default',
             $m->generate(array(
                 'module'=>'account',
                 'action'=>'edit',

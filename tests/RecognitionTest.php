@@ -5,8 +5,8 @@
  * PHP version 5
  *
  * LICENSE:
- * 
- * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com> 
+ *
+ * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -16,9 +16,9 @@
  *    * Redistributions of source code must retain the above copyright
  *      notice, this list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright
- *      notice, this list of conditions and the following disclaimer in the 
+ *      notice, this list of conditions and the following disclaimer in the
  *      documentation and/or other materials provided with the distribution.
- *    * The names of the authors may not be used to endorse or promote products 
+ *    * The names of the authors may not be used to endorse or promote products
  *      derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
@@ -47,15 +47,15 @@
 require_once 'Net/URL/Mapper.php';
 
 /**
- * PHPUnit2 Test Case
+ * PHPUnit Test Case
  */
-require_once 'PHPUnit2/Framework/TestCase.php';
+require_once 'PHPUnit/Framework/TestCase.php';
 
 
 /**
  * URL recognition tests for Net_URL_Mapper class
  */
-class RecognitionTest extends PHPUnit2_Framework_TestCase
+class RecognitionTest extends PHPUnit_Framework_TestCase
 {
     public function testAllFixed()
     {
@@ -168,7 +168,7 @@ class RecognitionTest extends PHPUnit2_Framework_TestCase
             $this->assertEquals(null, $m->match('/hi'));
             $this->assertEquals(array('controller'=>'content', 'name'=>'index'), $m->match('/index/hi'));
         }
-    }   
+    }
 
     public function testDynamicWithRegexpCondition()
     {
@@ -237,7 +237,7 @@ class RecognitionTest extends PHPUnit2_Framework_TestCase
         $this->assertEquals(null, $m->match('/something/is'));
         $this->assertEquals(array('controller'=>'content', 'name'=>'group', 'action'=>'view', 'id'=>'3'), $m->match('/group/view-3'));
         $this->assertEquals(null, $m->match('/group/view-'));
-        
+
     }
 
     public function testSplitsWithSlashesAndDefault()
@@ -263,7 +263,7 @@ class RecognitionTest extends PHPUnit2_Framework_TestCase
         $this->assertEquals(array('controller'=>'archive', 'action'=>'view', 'year'=>'2005', 'month'=>'10', 'day'=>'04'), $m->match('/archives/20051004.html'));
         $this->assertEquals(array('controller'=>'archive', 'action'=>'view', 'year'=>'2006', 'month'=>'01', 'day'=>'01'), $m->match('/archives/20060101.html'));
     }
-    
+
     public function testDefaultRoute()
     {
         $m = Net_URL_Mapper::getInstance();
@@ -338,7 +338,7 @@ class RecognitionTest extends PHPUnit2_Framework_TestCase
             $this->assertEquals(array('controller'=>'blog', 'action'=>'view', 'id'=>'2'), $m->match('/view/blog'));
             $this->assertEquals(array('controller'=>'blog', 'action'=>'view', 'id'=>'2'), $m->match('/view/2/blog'));
         }
-    }    
+    }
 
     public function testUrlWithPrefix()
     {
@@ -362,7 +362,7 @@ class RecognitionTest extends PHPUnit2_Framework_TestCase
         $this->assertEquals(null, $m->match('/login?test=1'));
         $this->assertEquals(array('controller'=>'content', 'action'=>'check_access', 'url'=>'books/learning_php.pdf'), $m->match('/books/learning_php.pdf/login?test=1'));
     }
-    
+
     public function testSharp()
     {
         $m = Net_URL_Mapper::getInstance();
