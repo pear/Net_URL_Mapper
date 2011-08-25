@@ -6,7 +6,7 @@
  *
  * LICENSE:
  * 
- * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com>
+ * Copyright (c) 2011, Bertrand Mansion <golgote@mamasam.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
