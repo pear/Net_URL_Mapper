@@ -1,3 +1,4 @@
+logan logan logan logan logan logan logan
 <?php
 /**
  * URL parser and mapper
@@ -6,7 +7,7 @@
  *
  * LICENSE:
  * 
- * Copyright (c) 2011, Bertrand Mansion <golgote@mamasam.com>
+ * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -37,7 +38,7 @@
  * @package    Net_URL_Mapper
  * @author     Bertrand Mansion <golgote@mamasam.com>
  * @license    http://opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id$
+ * @version    CVS: $Id: Mapper.php 232857 2007-03-28 10:23:04Z mansion $
  * @link       http://pear.php.net/package/Net_URL_Mapper
  */
 
@@ -122,11 +123,12 @@ class Net_URL_Mapper
     * @param    string  The path to connect
     * @param    array   Default values for path parts
     * @param    array   Regular expressions for path parts
+    * @param    string  Name the route for easy referencing
     * @return   object  Net_URL_Mapper_Path
     */
-    public function connect($path, $defaults = array(), $rules = array())
+    public function connect($path, $defaults = array(), $rules = array(), $alias = null)
     {
-        $pathObj = new Net_URL_Mapper_Path($path, $defaults, $rules);
+        $pathObj = new Net_URL_Mapper_Path($path, $defaults, $rules, $alias);
         $this->addPath($pathObj);
         return $pathObj;
     }
@@ -272,14 +274,16 @@ class Net_URL_Mapper
 
         foreach ($this->paths as $path) {
             $set = array();
+            $defined_keys = true;
             foreach ($values as $k => $v) {
                 if ($path->hasKey($k, $v)) {
                     $set[$k] = $v;
+                } else {
+                    $defined_keys = false;
                 }
             }
 
-            if (count($set) == count($values) &&
-                count($set) <= $path->getMaxKeys()) {
+            if ($defined_keys && count($set) <= $path->getMaxKeys()) {
 
                 $req = $path->getRequired();
                 if (count(array_intersect(array_keys($set), $req)) != count($req)) {
@@ -287,6 +291,47 @@ class Net_URL_Mapper
                 }
                 $gen = $path->generate($set, $qstring, $anchor);
                 return $this->scriptname.$this->prefix.$gen;
+            }
+        }
+        return false;
+    }
+
+    /**
+    * Generate an url based off a route
+    *
+    * Will attempt to find a path based on the path's alias. 
+    *
+    * @param    array   Alias to be used to look up the path
+    * @param    array   Values to be used for the url generation
+    * @param    array   Key/value pairs for query string if needed
+    * @param    string  Anchor (fragment) if needed
+    * @return   string|false    String if a rule was found, false otherwise
+    */
+    public function generateFromAlias($alias, $values = array(), $qstring = array(), $anchor = '') 
+    {
+        foreach ($this->paths as $path) {
+            if ($path->getAlias() == $alias) {
+                $set = array();
+
+                $defined_keys = true;
+                foreach ($values as $k => $v) {
+                    if ($path->hasKey($k, $v)) {
+                        $set[$k] = $v;
+                    } else {
+                        $defined_keys = false;
+                    }
+                }
+
+                if ($defined_keys && count($set) <= $path->getMaxKeys()) {
+                    $req = $path->getRequired();
+
+                    if (count(array_intersect(array_keys($set), $req)) != count($req)) {
+                        continue;
+                    }
+
+                    $gen = $path->generate($set, $qstring, $anchor);
+                    return $this->scriptname.$this->prefix.$gen;
+                }
             }
         }
         return false;
