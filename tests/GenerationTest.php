@@ -37,7 +37,7 @@
  * @package    Net_URL_Mapper
  * @author     Bertrand Mansion <golgote@mamasam.com>
  * @license    http://opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: GenerationTest.php 296826 2010-03-25 22:57:49Z kguest $
+ * @version    CVS: $Id$
  * @link       http://pear.php.net/package/Net_URL_Mapper
  */
 

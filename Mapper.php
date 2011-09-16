@@ -1,4 +1,3 @@
-logan logan logan logan logan logan logan
 <?php
 /**
  * URL parser and mapper
@@ -7,7 +6,7 @@ logan logan logan logan logan logan logan
  *
  * LICENSE:
  * 
- * Copyright (c) 2006, Bertrand Mansion <golgote@mamasam.com>
+ * Copyright (c) 2011, Bertrand Mansion <golgote@mamasam.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -38,7 +37,7 @@ logan logan logan logan logan logan logan
  * @package    Net_URL_Mapper
  * @author     Bertrand Mansion <golgote@mamasam.com>
  * @license    http://opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: Mapper.php 232857 2007-03-28 10:23:04Z mansion $
+ * @version    CVS: $Id$
  * @link       http://pear.php.net/package/Net_URL_Mapper
  */
 

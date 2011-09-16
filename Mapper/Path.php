@@ -37,7 +37,7 @@
  * @package    Net_URL_Mapper
  * @author     Bertrand Mansion <golgote@mamasam.com>
  * @license    http://opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: Path.php 296456 2010-03-20 00:41:08Z kguest $
+ * @version    CVS: $Id$
  * @link       http://pear.php.net/package/Net_URL_Mapper
  */
 
@@ -57,7 +57,6 @@ class Net_URL_Mapper_Path
 
 
     protected $alias;
-    protected $name;
     protected $rules = array();
     protected $defaults = array();
     protected $parts = array();
