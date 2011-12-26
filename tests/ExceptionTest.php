@@ -49,7 +49,7 @@ require_once 'Net/URL/Mapper.php';
 /**
  * PHPUnit Test Case
  */
-require_once 'PHPUnit/Framework.php';
+require_once 'PHPUnit/Framework/TestCase.php';
 
 /**
  * URL recognition tests for Net_URL_Mapper class
