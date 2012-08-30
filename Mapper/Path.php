@@ -67,11 +67,12 @@ class Net_URL_Mapper_Path
     protected $fixed = true;
     protected $required;
 
-    public function __construct($path = '', $defaults = array(), $rules = array())
+    public function __construct($path = '', $defaults = array(), $rules = array(), $alias = null)
     {
         $this->path = '/'.trim(Net_URL::resolvePath($path), '/');
         $this->setDefaults($defaults);
         $this->setRules($rules);
+        $this->setAlias($alias);
 
         try {
             $this->parsePath();
