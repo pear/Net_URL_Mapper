@@ -1,0 +1,28 @@
+{
+    "authors": [
+        {
+            "email": "golgote@mamasam.com",
+            "name": "Bertrand Mansion",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+    "description": "Provides a simple and flexible way to build nice URLs for web applications.",
+    "license": "New BSD License",
+    "name": "pear/net_url_mapper",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Net_URL_Mapper",
+        "source": "https://github.com/pear/Net_URL_Mapper"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
